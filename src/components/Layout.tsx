@@ -10,6 +10,13 @@ const StyledContainer = styled.div`
   max-width: 100vw;
 `;
 
+const StyledMain = styled.main`
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
 interface LayoutProps {
   title: string;
 }
@@ -21,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
         <title>{title}</title>
       </Head>
       <Header />
-      <main>{children}</main>
+      <StyledMain>{children}</StyledMain>
     </StyledContainer>
   );
 };
