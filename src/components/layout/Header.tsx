@@ -13,15 +13,15 @@ const StyledHeader = styled.header`
   align-items: center;
   color: white;
   padding: 20px;
-  button {
-    width: 25px;
-    height: 25px;
-  }
+
   a {
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  a.logo {
     font-size: larger;
   }
 `;
@@ -29,7 +29,13 @@ const StyledHeader = styled.header`
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  button.themeToggler {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 const Header: React.FC = () => {
@@ -43,13 +49,13 @@ const Header: React.FC = () => {
   return (
     <StyledHeader>
       <Link href='/' passHref>
-        <a>
+        <a className='logo'>
           <LogoIcon height={35} width={35} />
           Next Blog
         </a>
       </Link>
       <StyledContainer>
-        <button onClick={() => toggleTheme()}>{icon}</button>
+        <button className='themeToggler' onClick={() => toggleTheme()}>{icon}</button>
         <Navbar>
           <Link href='/'>Inicio</Link>
           <Link href='/posts'>Posts</Link>

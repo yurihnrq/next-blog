@@ -4,42 +4,42 @@ import { CloseIcon, MenuIcon } from './Icons';
 
 const StyledNavToggler = styled.button`
   display: none;
+  height: 30px;
+  width: 30px;
   @media (max-width: 768px) {
     display: block;
   }
 `;
 
-interface StyledMobileNavbarProps {
-  visible: boolean;
-}
-
-const StyledMobileNavbar = styled.nav<StyledMobileNavbarProps>`
+const StyledMobileNavbar = styled.nav`
   background-color: ${({ theme }) => theme.colors.primary};
-  display: ${({ visible }) => (visible ? 'flex' : 'none')};
+  display: flex;
   flex-direction: column;
   justify-items: end;
   align-items: flex-end;
+  opacity: 0;
 
   position: absolute;
-  left: 0;
-  top: 0;
+  z-index: -1;
+  right: 0;
+  top: 75px;
 
   padding-right: 20px;
-  width: 100vw;
-  height: 100vh;
+  width: 0px;
+  height: calc(100vh - 75px);
+  min-height: fit-content;
+
+  transition: all ease-in-out 0.25s;
+  &.active {
+    opacity: 1;
+    z-index: 9999;
+    width: 100vw;
+  }
 
   a {
     margin: 10px 0;
-    font-size: medium;
+    font-size: large;
   }
-`;
-
-const StyledDiv = styled.div`
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  width: 100%;
-  height: 75px;
 `;
 
 interface MobileNavbarProps {
@@ -60,14 +60,9 @@ export const MobileNavbar = ({ children }: MobileNavbarProps): JSX.Element => {
   return (
     <>
       <StyledNavToggler onClick={() => toggleVisibility()}>
-        <MenuIcon height={25} width={25} />
+        {visible ? <CloseIcon /> : <MenuIcon />}
       </StyledNavToggler>
-      <StyledMobileNavbar visible={visible}>
-        <StyledDiv>
-          <button onClick={() => toggleVisibility()}>
-            <CloseIcon height={25} width={25} />
-          </button>
-        </StyledDiv>
+      <StyledMobileNavbar className={visible ? 'active' : ''}>
         {children}
       </StyledMobileNavbar>
     </>

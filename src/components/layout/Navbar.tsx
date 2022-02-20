@@ -6,7 +6,7 @@ const StyledNav = styled.nav`
   flex-direction: row;
   a {
     margin: 0 5px;
-    font-size: medium;
+    font-size: medium; 
   }
   @media (max-width: 768px) {
     display: none;
