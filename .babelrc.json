@@ -1,0 +1,15 @@
+// Configuration to run styled-components in server side.
+// babel-plugin-styled-components must be installed as dev dependency.
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
+    ]
+  ]
+}

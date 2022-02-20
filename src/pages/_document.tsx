@@ -19,7 +19,7 @@ const MyDocument: NextPage = () => {
           rel='stylesheet'
         />
         <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-        <link rel='manifest' href='/webmanifest.json' />
+        <link rel='manifest' href='/manifest.json' />
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#216beb' />
         <meta name='theme-color' content='#216beb' />
       </Head>

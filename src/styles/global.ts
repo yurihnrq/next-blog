@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     font-family: 'Roboto', sans-serif;
   }
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;
