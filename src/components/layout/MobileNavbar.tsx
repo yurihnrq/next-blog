@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 import { CloseIcon, MenuIcon } from './Icons';
 
@@ -43,7 +42,11 @@ const StyledDiv = styled.div`
   height: 75px;
 `;
 
-export const MobileNavbar: React.FC = () => {
+interface MobileNavbarProps {
+  children: JSX.Element[];
+}
+
+export const MobileNavbar = ({ children }: MobileNavbarProps): JSX.Element => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisibility = useCallback(() => {
@@ -65,10 +68,7 @@ export const MobileNavbar: React.FC = () => {
             <CloseIcon height={25} width={25} />
           </button>
         </StyledDiv>
-        <Link href='/'>Inicio</Link>
-        <Link href='/'>Posts</Link>
-        <Link href='/'>Sobre</Link>
-        <Link href='/'>Contato</Link>
+        {children}
       </StyledMobileNavbar>
     </>
   );

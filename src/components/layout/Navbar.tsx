@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
@@ -14,15 +13,12 @@ const StyledNav = styled.nav`
   }
 `;
 
-export const Navbar: React.FC = () => {
-  return (
-    <StyledNav>
-      <Link href='/'>Inicio</Link>
-      <Link href='/posts'>Posts</Link>
-      <Link href='/sobre'>Sobre</Link>
-      <Link href='/contato'>Contato</Link>
-    </StyledNav>
-  );
+interface NavbarProps {
+  children: JSX.Element[];
+}
+
+export const Navbar = ({ children }: NavbarProps): JSX.Element => {
+  return <StyledNav>{children}</StyledNav>;
 };
 
 export default Navbar;

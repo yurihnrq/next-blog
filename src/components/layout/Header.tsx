@@ -50,8 +50,18 @@ const Header: React.FC = () => {
       </Link>
       <StyledContainer>
         <button onClick={() => toggleTheme()}>{icon}</button>
-        <Navbar />
-        <MobileNavbar />
+        <Navbar>
+          <Link href='/'>Inicio</Link>
+          <Link href='/posts'>Posts</Link>
+          <Link href='/sobre'>Sobre</Link>
+          <Link href='/contato'>Contato</Link>
+        </Navbar>
+        <MobileNavbar>
+          <Link href='/'>Inicio</Link>
+          <Link href='/posts'>Posts</Link>
+          <Link href='/sobre'>Sobre</Link>
+          <Link href='/contato'>Contato</Link>
+        </MobileNavbar>
       </StyledContainer>
     </StyledHeader>
   );
