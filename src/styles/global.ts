@@ -14,6 +14,12 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;

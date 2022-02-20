@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { LogoIcon, MoonIcon, SunIcon } from '../Icons';
+import { LogoIcon, MoonIcon, SunIcon } from './Icons';
+import MobileNavbar from './MobileNavbar';
+import Navbar from './Navbar';
 
 const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
@@ -14,9 +16,6 @@ const StyledHeader = styled.header`
   button {
     width: 25px;
     height: 25px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
   }
   a {
     color: white;
@@ -24,15 +23,6 @@ const StyledHeader = styled.header`
     justify-content: center;
     align-items: center;
     font-size: larger;
-  }
-`;
-
-const StyledNav = styled.nav`
-  display: flex;
-  flex-direction: row;
-  a {
-    margin: 0 5px;
-    font-size: medium;
   }
 `;
 
@@ -60,12 +50,8 @@ const Header: React.FC = () => {
       </Link>
       <StyledContainer>
         <button onClick={() => toggleTheme()}>{icon}</button>
-        <StyledNav>
-          <Link href='/'>Inicio</Link>
-          <Link href='/'>Posts</Link>
-          <Link href='/'>Sobre</Link>
-          <Link href='/'>Contato</Link>
-        </StyledNav>
+        <Navbar />
+        <MobileNavbar />
       </StyledContainer>
     </StyledHeader>
   );
