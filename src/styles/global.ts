@@ -7,8 +7,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background-color: #333333;
-    color: #EEEEEE;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    font-family: 'Roboto', sans-serif;
   }
 `;
 

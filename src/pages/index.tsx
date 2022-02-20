@@ -1,16 +1,11 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
+import Layout from '../components/Layout';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Página inicial</title>
-      </Head>
-      <main>
-        <p>Página inicial</p>
-      </main>
-    </div>
+    <Layout title='Página inicial'>
+      <p>Página inicial</p>
+    </Layout>
   );
 };
 
