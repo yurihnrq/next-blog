@@ -7,15 +7,11 @@ import Navbar from './Navbar';
 
 const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   color: white;
   padding: 20px;
 
   a {
-    color: white;
+    color: #eeeeee;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +22,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-const StyledContainer = styled.div`
+const NavContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -38,9 +34,19 @@ const StyledContainer = styled.div`
   }
 `;
 
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto;
+  max-width: 1280px;
+`;
+
 const Header: React.FC = () => {
   const { id, toggleTheme } = useContext(ThemeContext);
-  const [icon, setIcon] = useState<JSX.Element | null>(null);
+  const [icon, setIcon] = useState<JSX.Element>();
 
   useEffect(() => {
     setIcon(() => (id === 'light' ? <MoonIcon /> : <SunIcon />));
@@ -48,26 +54,30 @@ const Header: React.FC = () => {
 
   return (
     <StyledHeader>
-      <Link href='/' passHref>
-        <a className='logo'>
-          <LogoIcon height={35} width={35} />
-          Next Blog
-        </a>
-      </Link>
       <StyledContainer>
-        <button className='themeToggler' onClick={() => toggleTheme()}>{icon}</button>
-        <Navbar>
-          <Link href='/'>Inicio</Link>
-          <Link href='/posts'>Posts</Link>
-          <Link href='/sobre'>Sobre</Link>
-          <Link href='/contato'>Contato</Link>
-        </Navbar>
-        <MobileNavbar>
-          <Link href='/'>Inicio</Link>
-          <Link href='/posts'>Posts</Link>
-          <Link href='/sobre'>Sobre</Link>
-          <Link href='/contato'>Contato</Link>
-        </MobileNavbar>
+        <Link href='/' passHref>
+          <a className='logo'>
+            <LogoIcon strokeColor='#EEEEEE' height={35} width={35} />
+            Next Blog
+          </a>
+        </Link>
+        <NavContainer>
+          <button className='themeToggler' onClick={() => toggleTheme()}>
+            {icon}
+          </button>
+          <Navbar>
+            <Link href='/'>Inicio</Link>
+            <Link href='/posts'>Posts</Link>
+            <Link href='/sobre'>Sobre</Link>
+            <Link href='/contato'>Contato</Link>
+          </Navbar>
+          <MobileNavbar>
+            <Link href='/'>Inicio</Link>
+            <Link href='/posts'>Posts</Link>
+            <Link href='/sobre'>Sobre</Link>
+            <Link href='/contato'>Contato</Link>
+          </MobileNavbar>
+        </NavContainer>
       </StyledContainer>
     </StyledHeader>
   );

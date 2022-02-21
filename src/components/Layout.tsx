@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
 
 const StyledMain = styled.main`
   width: 100%;
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 `;

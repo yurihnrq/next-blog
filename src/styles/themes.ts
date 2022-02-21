@@ -3,9 +3,7 @@ export interface Theme {
   colors: {
     primary: string;
     secondary: string;
-    darkPrimary: string;
     complementary: string;
-    darkComplementary: string;
     text: string;
     background: string;
   };
@@ -16,9 +14,7 @@ export const LightTheme: Theme = {
   colors: {
     primary: '#216BEB',
     secondary: '#3D84FF',
-    darkPrimary: '#0B419E',
     complementary: '#EBAA21',
-    darkComplementary: '#9E6B00',
     text: '#444444',
     background: '#EEEEEE'
   }
@@ -27,11 +23,9 @@ export const LightTheme: Theme = {
 export const DarkTheme: Theme = {
   id: 'dark',
   colors: {
-    primary: '#216BEB',
-    secondary: '#3D84FF',
-    darkPrimary: '#0B419E',
-    complementary: '#EBAA21',
-    darkComplementary: '#9E6B00',
+    primary: '#0B419E',
+    secondary: '#216BEB',
+    complementary: '#9E6B00',
     text: '#EEEEEE',
     background: '#475569'
   }
