@@ -23,8 +23,8 @@ export const LightTheme: Theme = {
 export const DarkTheme: Theme = {
   id: 'dark',
   colors: {
-    primary: '#0B419E',
-    secondary: '#216BEB',
+    primary: '#216BEB',
+    secondary: '#3D84FF',
     complementary: '#9E6B00',
     text: '#EEEEEE',
     background: '#475569'
