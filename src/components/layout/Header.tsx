@@ -5,45 +5,6 @@ import { LogoIcon, MoonIcon, SunIcon } from './Icons';
 import MobileNavbar from './MobileNavbar';
 import Navbar from './Navbar';
 
-const StyledHeader = styled.header`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
-  padding: 20px;
-
-  a {
-    color: #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  a.logo {
-    font-size: larger;
-  }
-`;
-
-const NavContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  button.themeToggler {
-    width: 25px;
-    height: 25px;
-  }
-`;
-
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  margin: 0 auto;
-  max-width: 1280px;
-`;
-
 const Header: React.FC = () => {
   const { id, toggleTheme } = useContext(ThemeContext);
   const [icon, setIcon] = useState<JSX.Element>();
@@ -84,3 +45,42 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
+const StyledHeader = styled.header`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: white;
+  padding: 20px;
+
+  a {
+    color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a.logo {
+    font-size: larger;
+  }
+`;
+
+const NavContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  button.themeToggler {
+    width: 25px;
+    height: 25px;
+  }
+`;
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto;
+  max-width: 1280px;
+`;
