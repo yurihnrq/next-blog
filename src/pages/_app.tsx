@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { DarkTheme, LightTheme, Theme } from '../styles/themes';
 import usePersistentState from '../hooks/usePersistentState';
 
-const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [theme, setTheme] = usePersistentState<Theme>('theme', LightTheme);
 
   const toggleTheme = useCallback(() => {
