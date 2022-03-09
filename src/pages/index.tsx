@@ -5,6 +5,7 @@ const Home: NextPage = () => {
   return (
     <Layout title='Página inicial'>
       <p>Página inicial</p>
+      
     </Layout>
   );
 };

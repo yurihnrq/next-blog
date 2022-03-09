@@ -2,6 +2,35 @@ import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { CloseIcon, MenuIcon } from './Icons';
 
+interface MobileNavbarProps {
+  children: JSX.Element[];
+}
+
+export const MobileNavbar = ({ children }: MobileNavbarProps): JSX.Element => {
+  const [visible, setVisible] = useState(false);
+
+  const toggleVisibility = useCallback(() => {
+    setVisible(prevState => !prevState);
+  }, []);
+
+  useEffect(() => {
+    setVisible(false);
+  }, []);
+
+  return (
+    <>
+      <StyledNavToggler onClick={() => toggleVisibility()}>
+        {visible ? <CloseIcon /> : <MenuIcon />}
+      </StyledNavToggler>
+      <StyledMobileNavbar className={visible ? 'active' : ''}>
+        {children}
+      </StyledMobileNavbar>
+    </>
+  );
+};
+
+export default MobileNavbar;
+
 const StyledNavToggler = styled.button`
   display: none;
   height: 30px;
@@ -41,32 +70,3 @@ const StyledMobileNavbar = styled.nav`
     font-size: large;
   }
 `;
-
-interface MobileNavbarProps {
-  children: JSX.Element[];
-}
-
-export const MobileNavbar = ({ children }: MobileNavbarProps): JSX.Element => {
-  const [visible, setVisible] = useState(false);
-
-  const toggleVisibility = useCallback(() => {
-    setVisible(prevState => !prevState);
-  }, []);
-
-  useEffect(() => {
-    setVisible(false);
-  }, []);
-
-  return (
-    <>
-      <StyledNavToggler onClick={() => toggleVisibility()}>
-        {visible ? <CloseIcon /> : <MenuIcon />}
-      </StyledNavToggler>
-      <StyledMobileNavbar className={visible ? 'active' : ''}>
-        {children}
-      </StyledMobileNavbar>
-    </>
-  );
-};
-
-export default MobileNavbar;
