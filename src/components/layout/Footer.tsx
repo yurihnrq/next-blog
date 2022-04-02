@@ -1,30 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import * as Styled from './styled/Footer.styled';
 
 const Footer: React.FC = () => {
   return (
-    <StyledFooter>
+    <Styled.Footer>
       <span>App desenvolvido por Yuri Henrique B. Maciel</span>
-    </StyledFooter>
+    </Styled.Footer>
   );
 };
 
 export default Footer;
-
-const StyledFooter = styled.footer`
-  position: absolute;
-  bottom: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 65px;
-
-  background-color: ${({ theme }) => theme.colors.secondary};
-  color: white;
-
-  span {
-    font-size: small;
-  }
-`;

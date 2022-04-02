@@ -1,6 +1,6 @@
-import React from 'react';
 import Head from 'next/head';
-import styled from 'styled-components';
+import React from 'react';
+import * as Styled from './styled/Layout.styled';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 
@@ -10,32 +10,15 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, title }) => {
   return (
-    <StyledContainer>
+    <Styled.Container>
       <Head>
         <title>{title}</title>
       </Head>
       <Header />
-      <StyledMain>{children}</StyledMain>
+      <Styled.Main>{children}</Styled.Main>
       <Footer />
-    </StyledContainer>
+    </Styled.Container>
   );
 };
 
 export default Layout;
-
-const StyledContainer = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  max-width: 100vw;
-  position: relative;
-`;
-
-const StyledMain = styled.main`
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  margin-bottom: 65px;
-  position: relative;
-`;

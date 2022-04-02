@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import * as Styled from './styled/Header.styled';
+import { ThemeContext } from 'styled-components';
 import { LogoIcon, MoonIcon, SunIcon } from './Icons';
-import MobileNavbar from './MobileNavbar';
-import Navbar from './Navbar';
+import MobileNavbar from './navigation/MobileNavbar';
+import Navbar from './navigation/Navbar';
 
 const Header: React.FC = () => {
   const { id, toggleTheme } = useContext(ThemeContext);
@@ -14,15 +15,15 @@ const Header: React.FC = () => {
   }, [id]);
 
   return (
-    <StyledHeader>
-      <StyledContainer>
+    <Styled.Header>
+      <Styled.Container>
         <Link href='/' passHref>
           <a className='logo'>
             <LogoIcon strokeColor='#EEEEEE' height={35} width={35} />
             Next Blog
           </a>
         </Link>
-        <NavContainer>
+        <Styled.NavContainer>
           <button className='themeToggler' onClick={() => toggleTheme()}>
             {icon}
           </button>
@@ -38,49 +39,10 @@ const Header: React.FC = () => {
             <Link href='/sobre'>Sobre</Link>
             <Link href='/contato'>Contato</Link>
           </MobileNavbar>
-        </NavContainer>
-      </StyledContainer>
-    </StyledHeader>
+        </Styled.NavContainer>
+      </Styled.Container>
+    </Styled.Header>
   );
 };
 
 export default Header;
-
-const StyledHeader = styled.header`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
-  padding: 20px;
-
-  a {
-    color: #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  a.logo {
-    font-size: larger;
-  }
-`;
-
-const NavContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  button.themeToggler {
-    width: 25px;
-    height: 25px;
-  }
-`;
-
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  margin: 0 auto;
-  max-width: 1280px;
-`;
