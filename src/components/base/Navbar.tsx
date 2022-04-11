@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import * as Styled from './styled/Navgation.styled';
+import * as Styled from './styled/Navbar.styled';
 import { CloseIcon, MenuIcon } from './Icons';
 
 const Navigation: React.FC = ({ children }) => {
