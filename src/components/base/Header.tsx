@@ -1,17 +1,16 @@
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Styled from './styled/Header.styled';
-import { ThemeContext } from 'styled-components';
 import { LogoIcon, MoonIcon, SunIcon } from './Icons';
-import MobileNavbar from './navigation/MobileNavbar';
-import Navbar from './navigation/Navbar';
+import Navbar from './Navbar';
+import useThemeContext from '../../hooks/useThemeContext';
 
 const Header: React.FC = () => {
-  const { id, toggleTheme } = useContext(ThemeContext);
-  const [icon, setIcon] = useState<JSX.Element>();
+  const { id, toggleTheme } = useThemeContext();
+  const [themeIcon, setThemeIcon] = useState<JSX.Element>();
 
   useEffect(() => {
-    setIcon(() => (id === 'light' ? <MoonIcon /> : <SunIcon />));
+    setThemeIcon(id === 'light' ? <MoonIcon /> : <SunIcon />);
   }, [id]);
 
   return (
@@ -25,7 +24,7 @@ const Header: React.FC = () => {
         </Link>
         <Styled.NavContainer>
           <button className='themeToggler' onClick={() => toggleTheme()}>
-            {icon}
+            {themeIcon}
           </button>
           <Navbar>
             <Link href='/'>Inicio</Link>
@@ -33,12 +32,6 @@ const Header: React.FC = () => {
             <Link href='/sobre'>Sobre</Link>
             <Link href='/contato'>Contato</Link>
           </Navbar>
-          <MobileNavbar>
-            <Link href='/'>Inicio</Link>
-            <Link href='/posts'>Posts</Link>
-            <Link href='/sobre'>Sobre</Link>
-            <Link href='/contato'>Contato</Link>
-          </MobileNavbar>
         </Styled.NavContainer>
       </Styled.Container>
     </Styled.Header>

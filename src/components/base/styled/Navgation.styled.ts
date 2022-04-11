@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const Nav = styled.nav`
+  display: flex;
+  flex-direction: row;
+  a {
+    margin: 0 10px;
+    font-size: medium;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 export const NavToggler = styled.button`
   display: none;
   height: 30px;
@@ -9,11 +21,11 @@ export const NavToggler = styled.button`
   }
 `;
 
-interface MobileNavbarProps {
+interface MobileNavProps {
   isOpen: boolean;
 }
 
-export const MobileNavbar = styled.nav<MobileNavbarProps>`
+export const MobileNav = styled.nav<MobileNavProps>`
   width: ${({ isOpen }) => (isOpen ? '100vw' : 0)};
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   z-index: ${({ isOpen }) => (isOpen ? 9999 : -1)};

@@ -1,16 +1,17 @@
 import { render, screen } from '@testing-library/react';
-import Header from '../../../components/base/Header';
+import Home from '../../pages';
 import '@testing-library/jest-dom';
 import { ThemeProvider } from 'styled-components';
-import { LightTheme } from '../../../styles/themes';
+import { LightTheme } from '../../styles/themes';
 
-describe('Header component', () => {
-  it('Render all links', async () => {
+describe('Index page', () => {
+  it('Render layout', async () => {
     render(
       <ThemeProvider theme={{ ...LightTheme, toggleTheme: () => {} }}>
-        <Header />
+        <Home />
       </ThemeProvider>
     );
-    expect(screen.queryAllByRole('link')).toHaveLength(9);
+
+    expect(screen.getByText('Página incial')).toBeInTheDocument();
   });
 });

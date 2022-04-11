@@ -23,6 +23,7 @@ export const NavContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 12px;
+
   button.themeToggler {
     width: 25px;
     height: 25px;

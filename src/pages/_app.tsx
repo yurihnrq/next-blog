@@ -1,24 +1,12 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import type { AppProps } from 'next/app';
-import GlobalStyle from '../styles/global';
-import { ThemeProvider } from 'styled-components';
-import { DarkTheme, LightTheme, Theme } from '../styles/themes';
-import usePersistentState from '../hooks/usePersistentState';
+import ThemeContext from '../context/ThemeContext';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  const [theme, setTheme] = usePersistentState<Theme>('theme', LightTheme);
-
-  const toggleTheme = useCallback(() => {
-    setTheme(previousTheme =>
-      previousTheme.id === 'light' ? DarkTheme : LightTheme
-    );
-  }, [setTheme]);
-
   return (
-    <ThemeProvider theme={{ ...theme, toggleTheme }}>
-      <GlobalStyle />
+    <ThemeContext.Provider>
       <Component {...pageProps} />
-    </ThemeProvider>
+    </ThemeContext.Provider>
   );
 };
 
