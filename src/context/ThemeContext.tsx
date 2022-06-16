@@ -4,7 +4,11 @@ import { ThemeProvider, ThemeConsumer as Consumer } from 'styled-components';
 import { DarkTheme, LightTheme, Theme } from '../styles/themes';
 import usePersistentState from '../hooks/usePersistentState';
 
-const Provider: React.FC = ({ children }) => {
+interface IProvider {
+  children: React.ReactNode;
+}
+
+const Provider: React.FC<IProvider> = ({ children }) => {
   const [theme, setTheme] = usePersistentState<Theme>('theme', LightTheme);
 
   const toggleTheme = useCallback(() => {

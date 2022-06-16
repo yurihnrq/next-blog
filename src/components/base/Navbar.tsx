@@ -2,7 +2,11 @@ import React, { useCallback, useState } from 'react';
 import * as Styled from './styled/Navbar.styled';
 import { CloseIcon, MenuIcon } from './Icons';
 
-const Navigation: React.FC = ({ children }) => {
+interface INavbar {
+  children: React.ReactNode;
+}
+
+const Navigation: React.FC<INavbar> = ({ children }) => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisibility: React.MouseEventHandler = useCallback(() => {
