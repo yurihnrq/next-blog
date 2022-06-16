@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import * as Styled from './styled/Header.styled';
-import { LogoIcon, MoonIcon, SunIcon } from './Icons';
-import Navbar from './Navbar';
-import useThemeContext from '../../hooks/useThemeContext';
+import * as Styled from './styled';
+import { LogoIcon, MoonIcon, SunIcon } from '../Icons';
+import Navbar from '../Navbar';
+import useThemeContext from '../../../hooks/useThemeContext';
 
 const Header: React.FC = () => {
   const { id, toggleTheme } = useThemeContext();

@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import React from 'react';
-import * as Styled from './styled/Layout.styled';
-import Header from './base/Header';
-import Footer from './base/Footer';
+import * as Styled from './styled';
+import Header from './Header';
+import Footer from './Footer';
 
 interface LayoutProps {
   title: string;

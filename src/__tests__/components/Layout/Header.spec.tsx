@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Header from '../../../components/base/Header';
+import Header from '@components/Layout/Header';
 import '@testing-library/jest-dom';
 import { ThemeProvider } from 'styled-components';
 import { LightTheme } from '../../../styles/themes';
