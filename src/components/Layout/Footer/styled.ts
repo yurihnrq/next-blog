@@ -1,17 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Footer: React.FC = () => {
-  return (
-    <StyledFooter>
-      <span>App desenvolvido por Yuri Henrique B. Maciel</span>
-    </StyledFooter>
-  );
-};
-
-export default Footer;
-
-const StyledFooter = styled.footer`
+export const Footer = styled.footer`
   position: absolute;
   bottom: 0;
 

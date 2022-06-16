@@ -1,5 +1,8 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "prettier"
+  ],
   "rules": {
     "jsx-quotes": [
       "error",
@@ -9,6 +12,13 @@
       "error",
       "single"
     ],
-    "eol-last": "error"
+    "eol-last": [
+      "error",
+      "always"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
   }
 }

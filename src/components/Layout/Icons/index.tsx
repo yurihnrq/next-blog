@@ -18,8 +18,7 @@ export const MoonIcon: React.FC<IconProps> = ({
       viewBox='0 0 24 24'
       stroke={strokeColor ? strokeColor : '#FFFFFF'}
       width={width ? width : '100%'}
-      height={height ? height : '100%'}
-    >
+      height={height ? height : '100%'}>
       <path
         strokeLinecap='round'
         strokeLinejoin='round'
@@ -42,8 +41,7 @@ export const SunIcon: React.FC<IconProps> = ({
       viewBox='0 0 24 24'
       stroke={strokeColor ? strokeColor : '#FFFFFF'}
       width={width ? width : '100%'}
-      height={height ? height : '100%'}
-    >
+      height={height ? height : '100%'}>
       <path
         strokeLinecap='round'
         strokeLinejoin='round'
@@ -66,8 +64,7 @@ export const MenuIcon: React.FC<IconProps> = ({
       viewBox='0 0 24 24'
       stroke={strokeColor ? strokeColor : '#FFFFFF'}
       width={width ? width : '100%'}
-      height={height ? height : '100%'}
-    >
+      height={height ? height : '100%'}>
       <path
         strokeLinecap='round'
         strokeLinejoin='round'
@@ -90,8 +87,7 @@ export const CloseIcon: React.FC<IconProps> = ({
       viewBox='0 0 24 24'
       stroke={strokeColor ? strokeColor : '#FFFFFF'}
       width={width ? width : '100%'}
-      height={height ? height : '100%'}
-    >
+      height={height ? height : '100%'}>
       <path
         strokeLinecap='round'
         strokeLinejoin='round'
@@ -114,8 +110,7 @@ export const LogoIcon: React.FC<IconProps> = ({
       viewBox='0 0 24 24'
       stroke={strokeColor ? strokeColor : '#FFFFFF'}
       width={width ? width : '100%'}
-      height={height ? height : '100%'}
-    >
+      height={height ? height : '100%'}>
       <path
         strokeLinecap='round'
         strokeLinejoin='round'

@@ -1,4 +1,5 @@
 {
+  "bracketSameLine": true,
   "jsxSingleQuote": true,
   "trailingComma": "none",
   "singleQuote": true,
@@ -6,5 +7,6 @@
   "printWidth": 80,
   "endOfLine": "lf",
   "tabWidth": 2,
-  "semi": true
+  "semi": true,
+  "useTabs": false
 }
